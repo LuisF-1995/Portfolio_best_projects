@@ -1,0 +1,168 @@
+.row-header {
+  margin: 0px auto;
+  padding: 0px 0px; }
+
+.row-margin {
+  margin: 0px auto;
+  padding: 50px 0px;
+  border-bottom: 1px ridge;
+  min-height: 400px; }
+
+.footer {
+  background-color: #d1c4e9;
+  margin: 0px auto;
+  padding: 20px 0px; }
+
+.jumbotron {
+  margin: 0px auto;
+  padding: 70px 30px;
+  background: #9575cd;
+  color: floralwhite; }
+
+address {
+  font-size: 80%;
+  margin: 0px;
+  color: #0f0f0f; }
+
+body {
+  padding: 50px 0px 0px 0px;
+  z-index: 0; }
+
+.navbar-dark {
+  background-color: #23022e; }
+
+.table .thead-dark th{
+  background-color:   #d9c5df; 
+  border-color: #d9c5df;
+}
+
+
+.tab-content {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px; }
+
+.carousel {
+  background: #512da8; }
+  .carousel .carousel-item {
+    height: 300px; }
+    .carousel .carousel-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-height: 300px; }
+
+#carouselButton {
+  right: 0px;
+  position: absolute;
+  bottom: 0px; }
+
+.modal-content .modal-header {
+  background: #512da8;
+  color: #fffaf0; }
+  .modal-content .modal-header .close {
+    color: #fffaf0; }
+
+.modal-content .modal-body {
+  background: #d1c4e9; }
+/*Styles Toogle Switch*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+#posters {
+  width: 22rem;
+}
+#prin{
+  width: 10rem;
+}
+#principal{
+  background-color: rgb(238, 224, 250);
+  padding: 0px;
+  border-radius: .3rem;
+}
+#secundario{
+  background-color: rgb(207, 190, 240);
+  padding: 20px 10px;
+  border-radius: .3rem;
+}
+#cardrecover{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.card-footer {
+  background: transparent;
+  border-top: 0px;
+}
+
+#footer-listablogs{
+  background:rgb(241, 241, 241);
+}
+
+#contenidoblog{
+  text-align: justify;
+  margin: 0 0 15px 0;
+}
+.comentario{
+  background-color: #99c24dff;
+}
+
+#row-misblogs{
+  border: none;
+}

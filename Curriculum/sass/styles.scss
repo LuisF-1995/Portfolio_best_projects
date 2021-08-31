@@ -1,0 +1,58 @@
+// @use 'variables';
+@import "_variables"; // $primary: #005677;
+// $secondary: #c4c4c4;
+// $tertiary: #e5e5e5;
+// $quaternary: #fff;
+body {
+  margin: 0;
+  font-size: 15px;
+}
+h1 {
+  background-color: $secondary;
+  color: $primary;
+  font-size: 35px;
+  padding: 15px;
+  text-align: center;
+}
+h5 {
+  background-color: $secondary;
+  color: $primary;
+  font-size: 20px;
+  padding: 9px 6px;
+  text-align: left;
+}
+.logo {
+  background-color: $tertiary;
+  text-align: center;
+}
+.flex {
+  display: flex;
+
+  p {
+    margin-right: 5px;
+  }
+}
+
+main {
+  margin: 104px 225px;
+}
+.footer {
+  align-items: center;
+  background-color: $primary;
+  color: $quaternary;
+  font-size: 20px;
+  justify-content: center;
+  padding: 11px;
+}
+section {
+  img,
+  p {
+    margin: 0;
+    padding: 0;
+    margin-left: 13px !important;
+    margin-right: 13px !important;
+  }
+  img {
+    height: 20px;
+  }
+}

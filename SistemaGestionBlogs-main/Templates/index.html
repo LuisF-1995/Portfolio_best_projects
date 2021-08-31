@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Sistema de gestión de Blogs - Página principal</title>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link href="{{ url_for('static', filename='css/all.css') }}" rel="stylesheet">
+    <!--load all styles -->
+    <!-- Icons -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!--Personalized styles-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <!--Navigation bar starts-->
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mr-auto" href="#">
+                <!-- <img src="img/coffee_blogger_48784.ico" alt="" class="img-fluid"> -->
+                <!-- <i class="fas fa-eye"></i> -->
+            </a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <!--mr-auto allows you to specify the right margin-->
+                    <li class="nav-item active"><a class="nav-link" href="/"><span
+                                class="fa fa-home fa-lg"></span> Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/aboutus"><span class="fa fa-info fa-lg"></span>
+                            ¿Quienes somos?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/menuprincipal"><span
+                                class="fa fa-list fa-lg"></span> Menú principal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contactus"><span class="fa fa-address-card fa-lg"></span>
+                            Contáctenos</a></li>
+                </ul>
+                <!--
+                <span class="navbar-text">
+                    <a id="loginButton" onclick="iniciarSesion()">
+                        <span class="fas fa-sign-in-alt"></span> Iniciar sesión
+                    </a>
+                </span>
+                -->
+                {{sessioninfo}}
+            </div>
+        </div>
+    </nav>
+    <!--Navigation bar ends-->
+    <!--Page header starts-->
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header align-items-center">
+                <div class="col-12 col-sm-6">
+                    <h1>Sistema de gestión de blogs</h1>
+                    <p>Esta aplicación permite gestionar escritos (blogs) de interés
+                        sobre programación por usuarios.</p>
+                </div>
+                <div class="col-12 col-sm-3 align-self-center">
+                    <img src="{{ url_for('static', filename='img/coffee_blogger_48784.ico') }}" alt="" class="img-fluid">
+                </div>
+                <div class="col-12 col-sm-3 align-self-center">
+                    <a class="btn btn-sm btn-warning btn-block" id="reservation" href="/signup">Registrate</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Page header ends-->
+
+
+    <!--Page content starts-->
+    <div class="container">
+        <!--Container is the outter-most external layer-->
+
+        <div class="row row-margin">
+            <div class="col-md-4 mb-3">
+                <div class="card" id="posters">
+                    <img class="card-img-top" src="{{ url_for('static', filename='img/blog.png') }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Publicación 1</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus harum
+                            voluptatum nemo rem facere ratione! Quasi similique, officia molestiae deleniti tenetur,
+                            aliquid accusantium in atque harum dolores ducimus labore nesciunt!</p>
+                        <a href="/verblog" class="btn btn-primary">Ver publicación</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card" id="posters">
+                    <img class="card-img-top" src="{{ url_for('static', filename='img/blog.png') }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Publicación 2</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus harum
+                            voluptatum nemo rem facere ratione! Quasi similique, officia molestiae deleniti tenetur,
+                            aliquid accusantium in atque harum dolores ducimus labore nesciunt!</p>
+                        <a href="/verblog" class="btn btn-primary">Ver publicación</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card" id="posters">
+                    <img class="card-img-top" src="{{ url_for('static', filename='img/blog.png') }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Publicación 3</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus harum
+                            voluptatum nemo rem facere ratione! Quasi similique, officia molestiae deleniti tenetur,
+                            aliquid accusantium in atque harum dolores ducimus labore nesciunt!</p>
+                        <a href="/verblog" class="btn btn-primary">Ver publicación</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-margin">
+            <div class="col-md-4 mb-3">
+                <div class="card" id="posters">
+                    <img class="card-img-top" src="{{ url_for('static', filename='img/blog.png') }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Publicación 4</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus harum
+                            voluptatum nemo rem facere ratione! Quasi similique, officia molestiae deleniti tenetur,
+                            aliquid accusantium in atque harum dolores ducimus labore nesciunt!</p>
+                        <a href="/verblog" class="btn btn-primary">Ver publicación</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card" id="posters">
+                    <img class="card-img-top" src="{{ url_for('static', filename='img/blog.png') }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Publicación 5</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus harum
+                            voluptatum nemo rem facere ratione! Quasi similique, officia molestiae deleniti tenetur,
+                            aliquid accusantium in atque harum dolores ducimus labore nesciunt!</p>
+                        <a href="/verblog" class="btn btn-primary">Ver publicación</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card" id="posters">
+                    <img class="card-img-top" src="{{ url_for('static', filename='img/blog.png') }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Publicación 6</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus harum
+                            voluptatum nemo rem facere ratione! Quasi similique, officia molestiae deleniti tenetur,
+                            aliquid accusantium in atque harum dolores ducimus labore nesciunt!</p>
+                        <a href="/verblog" class="btn btn-primary">Ver publicación</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Page content ends-->
+
+    <!--Page footer starts-->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 offset-1 col-sm-2">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/aboutus">¿Quienes somos?</a></li>
+                        <li><a href="/menuprincipal">Menú principal</a></li>
+                        <li><a href="/contactus">Contáctenos</a></li>
+                    </ul>
+                </div>
+                <div class="col-7 col-sm-5">
+                    <h5>Dirección</h5>
+                    <address>
+                        742 Evergreen Terrace<br>
+                        Springfield<br>
+                        USA<br>
+                        <i class="fa fa-phone fa-lg"></i>: +5555555<br>
+                        <i class="fa fa-fax fa-lg"></i>: +5555555<br>
+                        <i class="fa fa-envelope fa-lg"></i>: <a
+                            href="mailto:info@pruebablog.com">info@pruebablog.com</a>
+                    </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i
+                                class="fab fa-google-plus-g fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i
+                                class="fab fa-facebook fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i
+                                class="fab fa-linkedin fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i
+                                class="fab fa-twitter fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i
+                                class="fab fa-youtube fa-lg"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fas fa-envelope-open fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <p>© Copyright 2020 Sistema de gestión de blogs</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Page footer ends-->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Font Awesome icons-->
+    <script defer src="{{ url_for('static', filename='js/all.js') }}"></script>
+    <!--load all styles -->
+
+    <script>
+        function iniciarSesion() {
+            location.href = "/login";
+        }
+
+        function cerrarSesion() {
+            location.href = "/logout";
+        }
+    </script>
+</body>
+
+</html>

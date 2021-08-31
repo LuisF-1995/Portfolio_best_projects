@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/8d73a408b7.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/account.css" />
+  <title>Ecommerce | Registro</title>
+</head>
+
+<body>
+  <header>
+    <section class="header">
+      <article class="discount">
+        <div>20% de descuento en todos los productos!</div>
+      </article>
+      <section class="title">
+        <a href="index.html">
+          <img src="img/logo.svg" alt="logo" />
+          <h1>Nombre Tienda</h1>
+        </a>
+      </section>
+    </section>
+  </header>
+  <main>
+    <section class="container-register">
+      <h2 class="account-title">Registro</h2>
+      <form>
+        <input type="text" name="name" id="name" placeholder="Nombre y Apellido" required />
+        <input type="email" name="email" id="email" placeholder="Correo Electrónico" required />
+        <input type="password" name="pwd" id="pwd" placeholder="Contraseña" required />
+        <select name="country" id="country" required>
+          <option disabled selected>País</option>
+          <option value="1">Argentina</option>
+          <option value="2">Brasil</option>
+          <option value="3">Colombia</option>
+        </select>
+        <div class="form-actions">
+          <button type="reset" class="btn-reset">Resetear</button>
+          <button type="submit">Registrar</button>
+        </div>
+      </form>
+      <p class="register"><a href="login.html">¿Ya tenés una cuenta?</a><span> Ingresá</span></p>
+    </section>
+  </main>
+  <footer>
+    <div class="footer">
+      <p>Todos los derechos reservados a FRONT END 1</p>
+    </div>
+  </footer>
+</body>
+
+</html>

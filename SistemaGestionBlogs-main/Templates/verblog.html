@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Sistema de gestión de Blogs - Titulo del blog</title>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link href="{{ url_for('static', filename='css/all.css') }}" rel="stylesheet">
+    <!--load all styles -->
+    <!-- Icons -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!--Personalized styles-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+
+<body>
+    <!--Navigation bar starts-->
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mr-auto" href="#">
+                <!--<img src="" alt="logo de la aplicación" height="30" width="41">-->
+                <!--Temporal mientras se busca un logo para la página-->
+                <!-- <i class="fas fa-eye"></i> -->
+            </a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <!--mr-auto allows you to specify the right margin-->
+                    <li class="nav-item"><a class="nav-link" href="/"><span class="fa fa-home fa-lg"></span>
+                            Inicio</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/aboutus"><span class="fa fa-info fa-lg"></span>
+                            ¿Quienes
+                            somos?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/menuprincipal"><span
+                                class="fa fa-list fa-lg"></span> Menú
+                            principal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contactus"><span class="fa fa-address-card fa-lg"></span>
+                            Contáctenos</a></li>
+                </ul>
+                <span class="navbar-text">
+                    <a id="loginButton" onclick="cerrarSesion()">
+                        <span class="fas fa-sign-out-alt"></span> Cerrar Sesión
+                    </a>
+                </span>
+            </div>
+        </div>
+    </nav>
+    <!--Navigation bar ends-->
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-8">
+                    <h1>Título del blog</h1>
+                    <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                        "There is no one who loves pain itself, who seeks after it and wants to have it, simply because
+                        it is pain..."</p>
+                    <p><i>Publicado el 7 diciembre, 2020
+                            por César Parrado</i> </p>
+                </div>
+                <div class="col-12 col-sm align-self-center">
+                    <img src="{{ url_for('static', filename='img/coffee_blogger_48784.ico') }}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <ol class="col-12 breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                <li class="breadcrumb-item active">Ver [Nombre del blog]</li>
+            </ol>
+        </div>
+
+        <div class="row row-margin justify-content-center">
+
+            <div class="col-12 col-sm-8">
+                <p id="contenidoblog">
+
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet accumsan erat, nec tristique
+                    massa aliquet et. Integer accumsan felis ac arcu facilisis pretium. Nulla euismod hendrerit
+                    eleifend. Ut quis rutrum ex, efficitur dapibus sapien. Phasellus sit amet mollis nulla. Sed
+                    venenatis elit ut orci interdum, viverra blandit ex congue. Nullam vulputate massa vel elit dictum,
+                    id hendrerit ante ullamcorper.
+
+                    Curabitur non magna eros. Fusce maximus tortor vitae lacinia dictum. Nam commodo orci orci, in
+                    tempor orci gravida eget. Vestibulum lectus urna, maximus ac augue ut, commodo finibus urna.
+                    Maecenas sed placerat tellus. Etiam ac arcu fermentum, vehicula dolor at, tempor nibh. Praesent ac
+                    ex bibendum, maximus est vitae, feugiat velit.
+                    </br>
+                    </br>
+
+                    Nullam vehicula bibendum ultricies. Integer auctor, augue sit amet congue volutpat, lorem diam
+                    posuere odio, sit amet imperdiet elit metus mollis nulla. Mauris lacus purus, facilisis id purus ut,
+                    fermentum efficitur urna. Proin vulputate placerat tellus, sit amet efficitur ante tempus sed. Class
+                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed magna
+                    tellus, auctor sit amet efficitur eu, convallis vitae arcu. Cras ultrices eros nisl, sit amet
+                    lobortis nunc suscipit ac. Morbi purus ligula, efficitur eget elit eget, venenatis mattis velit. Sed
+                    eu mattis lorem, a luctus diam. Nunc non semper lacus, sit amet vulputate ante. In posuere nulla eu
+                    est volutpat dignissim. Aenean a ipsum sed odio iaculis ornare. Ut laoreet ligula sit amet massa
+                    posuere euismod. Vestibulum et scelerisque tellus.
+
+                    Integer nec lacinia leo, at consequat ipsum.
+                    </br>
+                    </br>Duis in dignissim eros. Integer porttitor posuere erat ac posuere. Nam lacus ligula, placerat
+                    sed ligula eu, vulputate tincidunt nibh. Etiam ac tristique libero. Aenean dolor augue, viverra at
+                    volutpat eleifend, venenatis nec justo. Duis eleifend enim diam, ornare interdum massa interdum
+                    quis. Aenean imperdiet elit nec ultrices tempus. Donec at vulputate est. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit.
+
+                    Vestibulum neque enim, pulvinar non tristique non, tincidunt ac ipsum. Suspendisse ut tellus eget
+                    nunc vehicula finibus non in nisi. Phasellus bibendum ex a felis lacinia feugiat. Morbi sed finibus
+                    ex. Cras sodales tincidunt neque, nec commodo mi fermentum non. Praesent convallis diam non quam
+                    porttitor, non convallis enim luctus. Sed sed finibus erat, nec vulputate mi. Vestibulum aliquet
+                    lorem ligula, varius luctus justo rutrum rhoncus. Nunc in dictum lacus. Aliquam erat volutpat.
+                    Maecenas venenatis rutrum ipsum, vitae maximus mauris dictum id. Sed ut leo velit.
+                </p>
+            </div>
+            <div class="col-12 col-sm-4">
+                <!-- <div class="row justify-content-center">
+                    <button class="btn mr-2"><i class="fa fa-save"></i> Guardar</button>
+                    <button class="btn mr-2"><i class="fa fa-edit"></i> Editar</button>
+                    <button class="btn mr-2"><i class="fa fa-trash"></i> Eliminar</button>
+                </div> -->
+                <br>
+                <div class="row row-margin">
+                    <img src="{{ url_for('static', filename='img/lenguajes-programacion.jpg') }}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="row row-margin justify-content-center">
+            <div class="col-12">
+
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Comentarios</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <i class="fas fa-user fa-5x"></i>
+                                <p class="text-secondary">Hace 15 minutos</p>
+                            </div>
+                            <div class="col-md-10">
+                                <p>
+                                    <a class="float-left" href="#"><strong>Jorge Moreira</strong></a>
+                                    <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                                    <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                                    <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                                    <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>Muy buen blog!!, Sigan así :)</p>
+                                <p>
+                                    <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Me
+                                        gusta</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <i class="fas fa-user-secret fa-5x"></i>
+                                <p class="text-secondary">Hace 5 minutos</p>
+                            </div>
+                            <div class="col-md-10">
+                                <p>
+                                    <a class="float-left" href="#"><strong>Anonymous</strong></a>
+                                    <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+
+                                </p>
+                                <div class="clearfix"></div>
+                                <p>Nada más inútil, deberías dedicarte a otra cosa</p>
+                                <p>
+                                    <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Me
+                                        gusta</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <form action="/comentarblog">
+                                    <label for="newcomment">Agrega tu comentario</label>
+                                    <textarea class="form-control" id="newcomment" rows="3" required></textarea>
+                                    <button type="submit" class="btn btn-primary">Comentar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 offset-1 col-sm-2">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/aboutus">¿Quienes somos?</a></li>
+                        <li><a href="/menuprincipal">Menú principal</a></li>
+                        <li><a href="/contactus">Contáctenos</a></li>
+                    </ul>
+                </div>
+                <div class="col-7 col-sm-5">
+                    <h5>Dirección</h5>
+                    <address>
+                        742 Evergreen Terrace<br>
+                        Springfield<br>
+                        USA<br>
+                        <i class="fa fa-phone fa-lg"></i>: +5555555<br>
+                        <i class="fa fa-fax fa-lg"></i>: +5555555<br>
+                        <i class="fa fa-envelope fa-lg"></i>: <a
+                            href="mailto:info@pruebablog.com">info@pruebablog.com</a>
+                    </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i
+                                class="fab fa-google-plus-g fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i
+                                class="fab fa-facebook fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i
+                                class="fab fa-linkedin fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i
+                                class="fab fa-twitter fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i
+                                class="fab fa-youtube fa-lg"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fas fa-envelope-open fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <p>© Copyright 2020 Sistema de gestión de blogs</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Font Awesome icons-->
+    <script defer src="{{ url_for('static', filename='js/all.js') }}"></script>
+    <!--load all styles -->
+
+    <!--Personalized scripts-->
+    <script>
+        function cerrarSesion() {
+            location.href = "/logout";
+        }
+    </script>
+</body>
+
+</html>

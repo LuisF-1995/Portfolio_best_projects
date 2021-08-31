@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-section {
+  background-color: #222222;
+  padding: 5px 90px;
+  font-size: 0.625rem;
+}
+.nav-section {
+  background-color: #f0a83e;
+  padding: 20px 40px;
+}
+.nav-left {
+  color: #fff;
+}
+.nav-right {
+  text-align: right;
+  color: #fff;
+}
+.black {
+  color: #000;
+}
+.white {
+  color: #fff;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo span {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.menu {
+  font-size: 0.813rem;
+}
+.menu span {
+  margin: 0 10px;
+}
+.menu-icon {
+  display: none;
+}
+.config span {
+  margin: 0 6 px;
+}
+.banner {
+  position: relative;
+  background-image: url("../img/banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+}
+.title {
+  font-size: 1.875rem;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+.subtitle {
+  font-size: 1rem;
+}
+.info {
+  position: absolute;
+  top: calc(50% - 50px);
+  right: 5%;
+  text-align: center;
+}
+.info p {
+  margin-bottom: 10px;
+}
+.btn {
+  padding: 15px 23px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn-primary {
+  background-color: #f0a83e;
+  color: #fff;
+}
+.btn-secondary {
+  background-color: #3c2313;
+  color: #fff;
+}
+.btn-gray {
+  background-color: #8a8787;
+  color: #fff;
+}
+.btn-subscribe {
+  border-radius: 15px;
+  padding: 12px 11px;
+}
+.round {
+  border-radius: 15px;
+  padding: 8px 0;
+  width: 110px;
+}
+.products {
+  margin-top: 24px;
+  text-align: center;
+}
+.products h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #3c2313;
+}
+.products nav {
+  margin-top: 10px;
+}
+.products nav > * {
+  text-decoration: none;
+  color: #666;
+  margin: 0 5px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 35px;
+  justify-content: center;
+}
+.card {
+  background-color: #fbfaf6;
+  font-size: 0.938rem;
+  font-weight: 500;
+  margin: 10px;
+  padding-bottom: 10px;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+.primary {
+  color: #f0a83e;
+}
+.secondary {
+  color: #3c2313;
+}
+.contact {
+  margin-top: 75px;
+  text-align: center;
+}
+.contact h2 {
+  font-size: 1.563rem;
+  font-weight: 700;
+  color: #3c2313;
+}
+.form {
+  max-width: 350px;
+  margin: 20px auto;
+}
+input {
+  border-radius: 15px;
+  border: none;
+  font-size: 0.563rem;
+  height: 40px;
+  margin: 5px 0;
+  padding-left: 15px;
+  outline: none;
+}
+.input-secondary {
+  background-color: #3c2313;
+  color: #fff;
+}
+.fullwidth {
+  width: 100%;
+}
+.form input::placeholder {
+  color: #fff;
+}
+.actions {
+  margin-bottom: 70px;
+}
+.actions button {
+  margin: 0 3px;
+  font-size: 1rem;
+}
+.subscribe-text,
+.subscribe-form {
+  display: flex;
+  align-items: center;
+}
+.subscribe-text > *,
+.subscribe-form > * {
+  margin: 0 5px;
+}
+.subscribe-form button {
+  font-size: 0.563rem;
+}
+.subscribe {
+  background-color: #f0a83e;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+}
+.email-subscribe {
+  width: 270px;
+}
+.footer {
+  background-color: #3c2313;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 70px;
+}
+.footer-contact {
+  background-color: #3c2313;
+  display: flex;
+  flex-direction: column;
+}
+.item {
+  display: flex;
+}
+.item > * {
+  margin: 10px 12px;
+  font-weight: 700;
+}
+.item-title {
+  color: #fff;
+  font-size: 1.25rem;
+}
+.item-subtitle {
+  color: #8a8787;
+  font-size: 0.625rem;
+}
+.copyright {
+  background-color: #222;
+  text-align: center;
+  color: #fff;
+  padding: 4px 0;
+}
+.menu-link::before {
+  content: url(../img/pawprint.svg);
+  margin-right: 5px;
+}
+input:focus {
+  border: 3px solid #f0a83e;
+}
+.btn-primary:hover {
+  background-color: rgb(14, 175, 95);
+  font-size: 700;
+}
+@media screen and (max-width: 480px) {
+  .info {
+    margin-left: 15px;
+    margin-right: 15px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  .form input {
+    width: calc(100% - 15px) !important;
+  }
+  .btn-primary {
+    width: 200px;
+    border-radius: 25px;
+  }
+  .btn-gray {
+    width: 200px;
+    border-radius: 25px;
+  }
+  .actions {
+    margin-bottom: 40px;
+  }
+  .subscribe {
+    padding: 10px;
+    flex-direction: column;
+  }
+  .subscribe-form {
+    justify-content: center;
+  }
+  .subscribe-text > *,
+  .subscribe-form > * {
+    margin: 5px;
+  }
+  .footer {
+    flex-direction: column;
+  }
+  .footer-logo {
+    order: -1;
+  }
+  .menu-item {
+    display: none;
+  }
+  .menu-icon {
+    display: inline-block;
+  }
+}
