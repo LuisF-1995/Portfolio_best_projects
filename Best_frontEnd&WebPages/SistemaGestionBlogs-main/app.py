@@ -53,7 +53,8 @@ def actualizarblog():
                 'user'] + ' <span class="fas fa-sign-out-alt"></span> Cerrar Sesión</a></span>')
         return render_template('actualizarblog.html', sessioninfo=mensaje)
     else:
-        mensaje = Markup('<div class="alert alert-warning" role="alert">Debes iniciar sesión primero</div>')
+        mensaje = Markup(
+            '<div class="alert alert-warning" role="alert">Debes iniciar sesión primero</div>')
         return render_template('login.html', mensaje=mensaje)
 
 
@@ -65,7 +66,8 @@ def buscar():
                 'user'] + ' <span class="fas fa-sign-out-alt"></span> Cerrar Sesión</a></span>')
         return render_template('buscar.html', sessioninfo=mensaje)
     else:
-        mensaje = Markup('<div class="alert alert-warning" role="alert">Debes iniciar sesión primero</div>')
+        mensaje = Markup(
+            '<div class="alert alert-warning" role="alert">Debes iniciar sesión primero</div>')
         return render_template('login.html', mensaje=mensaje)
 
 
@@ -77,7 +79,8 @@ def comentarblog():
                 'user'] + ' <span class="fas fa-sign-out-alt"></span> Cerrar Sesión</a></span>')
         return render_template('comentarblog.html', sessioninfo=mensaje)
     else:
-        mensaje = Markup('<div class="alert alert-warning" role="alert">Debes iniciar sesión primero</div>')
+        mensaje = Markup(
+            '<div class="alert alert-warning" role="alert">Debes iniciar sesión primero</div>')
         return render_template('login.html', mensaje=mensaje)
 
 
@@ -89,7 +92,8 @@ def contenidoblog():
                 'user'] + ' <span class="fas fa-sign-out-alt"></span> Cerrar Sesión</a></span>')
         return render_template('contenidoblog.html', sessioninfo=mensaje)
     else:
-        mensaje = Markup('<div class="alert alert-warning" role="alert">Debes iniciar sesión primero</div>')
+        mensaje = Markup(
+            '<div class="alert alert-warning" role="alert">Debes iniciar sesión primero</div>')
         return render_template('login.html', mensaje=mensaje)
 
 
@@ -101,7 +105,8 @@ def eliminarblog():
                 'user'] + ' <span class="fas fa-sign-out-alt"></span> Cerrar Sesión</a></span>')
         return render_template('eliminarblog.html', sessioninfo=mensaje)
     else:
-        mensaje = Markup('<div class="alert alert-warning" role="alert">Debes iniciar sesión primero</div>')
+        mensaje = Markup(
+            '<div class="alert alert-warning" role="alert">Debes iniciar sesión primero</div>')
         return render_template('login.html', mensaje=mensaje)
 
 
@@ -113,7 +118,8 @@ def crearblog():
                 'user'] + ' <span class="fas fa-sign-out-alt"></span> Cerrar Sesión</a></span>')
         return render_template('newblog.html', sessioninfo=mensaje)
     else:
-        mensaje = Markup('<div class="alert alert-warning" role="alert">Debes iniciar sesión primero</div>')
+        mensaje = Markup(
+            '<div class="alert alert-warning" role="alert">Debes iniciar sesión primero</div>')
         return render_template('login.html', mensaje=mensaje)
 
 
@@ -186,7 +192,7 @@ def verificarcuenta(username):
 @app.route("/newblog", methods=["POST"])
 def newblog():
     if 'user' in session:
-        usuario=session['user']
+        usuario = session['user']
         isvisible = ''
         etiqueta_prog = request.form.get('et-prog')
         print(etiqueta_prog)
@@ -199,14 +205,14 @@ def newblog():
             isvisible = 'S'
         else:
             isvisible = 'N'
-    
+
     # Crear conexión a base de datos
     conexion = sqlite3.connect("SGB_DB.db")
-    
+
     # Crear la sentencia SQL para insertar los datos
     conexion.execute("INSERT INTO Posts (titulo, contenidoPost, fechaPublicacion, esVisible, usuarioLogin"
                      ") VALUES (?, ?,DATETIME('now', 'localtime'), ?, ?)",
-                     (titulo, contenido, isvisible, usuario ))
+                     (titulo, contenido, isvisible, usuario))
     # Ejecuto la sentencia SQL
     conexion.commit()
 
@@ -217,16 +223,19 @@ def newblog():
     # Contar los registros recuperados
 
     for i in rows:
-        if etiqueta_prog=="programacion":
-            conexion.execute("INSERT INTO EtiquetasPost (idEtiqueta, idPost) VALUES (?, ?)",(1, i[0] ))
+        if etiqueta_prog == "programacion":
+            conexion.execute(
+                "INSERT INTO EtiquetasPost (idEtiqueta, idPost) VALUES (?, ?)", (1, i[0]))
             conexion.commit()
         if etiqueta_webd == "diseno_web":
-            conexion.execute("INSERT INTO EtiquetasPost (idEtiqueta, idPost) VALUES (?, ?)",(2, i[0] ))
+            conexion.execute(
+                "INSERT INTO EtiquetasPost (idEtiqueta, idPost) VALUES (?, ?)", (2, i[0]))
             conexion.commit()
-        if etiqueta_python=="python":
-            conexion.execute("INSERT INTO EtiquetasPost (idEtiqueta, idPost) VALUES (?, ?)",(3, i[0] ))
+        if etiqueta_python == "python":
+            conexion.execute(
+                "INSERT INTO EtiquetasPost (idEtiqueta, idPost) VALUES (?, ?)", (3, i[0]))
             conexion.commit()
-        
+
     # Cierro la conexión
     conexion.close()
     return render_template("pruebaregistro.html", rt_response="nuevo blog", rt_titulo=titulo, rt_contenido=contenido,
@@ -248,10 +257,12 @@ def registro():
     mail_existe = comprobarduplicidadmail(mail)
 
     if usr_existe == 'Existe':
-        mensaje = Markup('<div class="alert alert-warning" role="alert">El usuario digitado no está disponible</div>')
+        mensaje = Markup(
+            '<div class="alert alert-warning" role="alert">El usuario digitado no está disponible</div>')
         return render_template('signup.html', mensaje=mensaje)
     elif mail_existe == 'Existe':
-        mensaje = Markup('<div class="alert alert-warning" role="alert">Ya existe una cuenta asociada al correo</div>')
+        mensaje = Markup(
+            '<div class="alert alert-warning" role="alert">Ya existe una cuenta asociada al correo</div>')
         return render_template('signup.html', mensaje=mensaje)
     else:
         # Crear conexión a base de datos
@@ -299,7 +310,8 @@ def comprobarduplicidadusuario(usuario):
 
     # Crear un cursor de la conexión
     objcursor = conexion.cursor()
-    objcursor.execute("select * from Usuarios where usuarioLogin = '" + usuario + "'")
+    objcursor.execute(
+        "select * from Usuarios where usuarioLogin = '" + usuario + "'")
 
     # Recuperar los registros que coincidan con los criterios de búsqueda
     rows = objcursor.fetchall()
@@ -343,7 +355,8 @@ def comprobarhash(usuario, password):
 
     # Crear un cursor de la conexión
     objcursor = conexion.cursor()
-    objcursor.execute("select pwrd_hash from Usuarios where usuarioLogin = ? and contrasena = ? ", (usuario, password))
+    objcursor.execute(
+        "select pwrd_hash from Usuarios where usuarioLogin = ? and contrasena = ? ", (usuario, password))
 
     # Recuperar los registros que coincidan con los criterios de búsqueda
     rows = objcursor.fetchone()
@@ -365,7 +378,8 @@ def passrecover():
     conexion.row_factory = sql.Row
 
     objcursor = conexion.cursor()
-    objcursor.execute("select * from Usuarios where usuarioLogin = ? and email = ?", (usr, mail))
+    objcursor.execute(
+        "select * from Usuarios where usuarioLogin = ? and email = ?", (usr, mail))
     rows = objcursor.fetchone()
     if rows is not None:
         pswd = rows['contrasena']
@@ -404,7 +418,8 @@ def iniciarsesion():
 
         # Crear un cursor de la conexión
         objcursor = conexion.cursor()
-        objcursor.execute("select * from Usuarios where usuarioLogin = ? and contrasena = ?", (usr_login, pwd_login))
+        objcursor.execute(
+            "select * from Usuarios where usuarioLogin = ? and contrasena = ?", (usr_login, pwd_login))
 
         # Recuperar los registros que coincidan con los criterios de búsqueda
         rows = objcursor.fetchall()
@@ -429,7 +444,8 @@ def iniciarsesion():
                         '<div class="alert alert-warning" role="alert">La cuenta aún no ha sido verificada</div>')
                     return render_template('login.html', mensaje=mensaje)
         else:
-            mensaje = Markup('<div class="alert alert-warning" role="alert">Usuario y/o contraseña incorrectos</div>')
+            mensaje = Markup(
+                '<div class="alert alert-warning" role="alert">Usuario y/o contraseña incorrectos</div>')
             return render_template('login.html', mensaje=mensaje)
 
 
