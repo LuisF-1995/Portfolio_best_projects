@@ -3,6 +3,8 @@
  
  Para correr la pagina web se hace mediante flask usando los siguientes comandos en orden en la ventana de comandos:
  
+Estando posicionado dentro de la carpeta del proyecto
+
  1. set FLASK_APP=app.py
  2. set FLASK_ENV=development
  3. flask run
